@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐧 Pingu's Game - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="snow-bg"></div>
+    
+    <main class="login-container">
+        <h1 class="game-title">
+            <span class="penguin-icon">🐧</span>
+            <span data-i18n="gameTitle">PINGU'S GAME</span>
+            <span class="snowflake">❄️</span>
+        </h1>
+        
+        <!-- SELECTOR DE IDIOMA -->
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+            <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+        </div>
+        
+        <div class="seed-section">
+            <h2 data-i18n="createGame">¡CREA TU PARTIDA!</h2>
+            
+            <div class="seed-generator">
+                <button id="generateSeed" class="btn btn-primary" data-i18n="btnGenerate">
+                    🎲 GENERAR NUEVA SEED
+                </button>
+                
+                <div class="seed-display">
+                    <input type="text" id="seedInput" readonly data-i18n="placeholderSeed" placeholder="Aquí aparecerá tu seed">
+                    <button id="copySeed" class="btn btn-small" data-i18n="btnCopy">📋</button>
+                </div>
+                
+                <button id="createGame" class="btn btn-success" disabled data-i18n="btnCreate">
+                    ❄️ CREAR PARTIDA CON ESTA SEED
+                </button>
+            </div>
+            
+            <div class="seed-join">
+                <h3 data-i18n="joinGame">¿TIENES UNA SEED?</h3>
+                <div class="join-input">
+                    <input type="text" id="joinSeed" data-i18n="placeholderSeed" placeholder="Introduce la seed">
+                    <button id="joinGame" class="btn btn-secondary" data-i18n="btnJoin">🐧 UNIRSE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuración de jugadores -->
+        <div class="players-config">
+            <h3 data-i18n="configPlayers">⚙️ CONFIGURACIÓN DE JUGADORES</h3>
+            
+            <div class="config-grid">
+                <div class="config-item">
+                    <label data-i18n="humans">Jugadores humanos:</label>
+                    <div class="counter">
+                        <button class="counter-btn" id="humansMinus">-</button>
+                        <span id="humansCount">1</span>
+                        <button class="counter-btn" id="humansPlus">+</button>
+                    </div>
+                    <small>(1-4 jugadores)</small>
+                </div>
+                
+                <div class="config-item">
+                    <label data-i18n="cpus">Jugadores CPU:</label>
+                    <div class="counter">
+                        <button class="counter-btn" id="cpuMinus">-</button>
+                        <span id="cpuCount">3</span>
+                        <button class="counter-btn" id="cpuPlus">+</button>
+                    </div>
+                    <small>(0-3 CPUs)</small>
+                </div>
+            </div>
+            
+            <div class="total-info">
+                <span data-i18n="total">Total:</span> <span id="totalPlayers">4</span>/4 jugadores
+                <span id="configWarning" class="warning hidden" data-i18n="maxPlayers">❌ Máximo 4 jugadores</span>
+            </div>
+            
+            <div class="play-mode">
+                <h4>🎮 MODO DE JUEGO</h4>
+                <div class="mode-buttons">
+                    <button id="modeLocal" class="mode-btn active" data-i18n="btnLocal">🖥️ MISMO PC</button>
+                    <button id="modeOnline" class="mode-btn" data-i18n="btnOnline">🌐 ONLINE</button>
+                </div>
+                <p class="mode-description" id="modeDescription" data-i18n="modeLocalDesc">
+                    Todos juegan en este ordenador, turnándose
+                </p>
+            </div>
+        </div>
+        
+        <!-- Selector de pingüinos -->
+        <div class="players-preview">
+            <h4 data-i18n="selectPenguins">🎨 SELECCIONA TUS PINGÜINOS:</h4>
+            <div id="playerSelectors" class="player-selectors">
+                <!-- Se generan dinámicamente con JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer con créditos -->
+    <footer class="credits-footer">
+        <div class="credits-content">
+            <div class="credits-header">
+                <span class="penguin-icon">🐧</span>
+                <span class="footer-title" data-i18n="gameTitle">PINGU'S GAME</span>
+                <span class="snowflake">❄️</span>
+            </div>
+            
+            <div class="credits-body">
+                <p class="created-by"><span data-i18n="createdBy">Creado por</span> <span class="creator-name">KirByte</span></p>
+                <p class="creator-email">
+                    <span class="email-icon">📧</span>
+                    <a href="mailto:kirbytebi07@gmail.com">kirbytebi07@gmail.com</a>
+                </p>
+            </div>
+            
+            <div class="credits-footer-bottom">
+                <p class="copyright" data-i18n="rights">© 2026 Todos los derechos pingüineros reservados</p>
+                <p class="version" data-i18n="version">v2.0 - Multijugador Online ❄️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/translator.js"></script>
+</body>
+</html>

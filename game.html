@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐧 Pingu's Game - Tablero</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="snow-bg"></div>
+    
+    <div class="game-container">
+        <!-- Cabecera -->
+        <header class="game-header">
+            <div class="seed-info">
+                <span class="seed-label">SEED:</span>
+                <span id="currentSeed" class="seed-value">XXXX-XXXX</span>
+            </div>
+            
+            <div class="turn-info">
+                <span class="turn-label">TURNO DE:</span>
+                <div id="currentPlayer" class="current-player">
+                    <img src="images/penguins/pingu1.png" alt="Pingu 1" class="player-avatar">
+                    <span class="player-name">Pingu 1</span>
+                </div>
+            </div>
+            
+            <div class="dice-area">
+                <div class="dice-selector" id="diceSelector">
+                    <button id="diceNormal" class="dice-option normal" disabled>
+                        <span>🎲</span>
+                        <span>NORMAL</span>
+                        <span class="dice-range">1-6</span>
+                    </button>
+                    <button id="diceSlow" class="dice-option slow" disabled>
+                        <span>🐢</span>
+                        <span>LENTO</span>
+                        <span class="dice-count" id="slowCount">0</span>
+                    </button>
+                    <button id="diceTurbo" class="dice-option turbo" disabled>
+                        <span>⚡</span>
+                        <span>TURBO</span>
+                        <span class="dice-count" id="turboCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Selector de idioma (AÑADIDO) -->
+        <div class="language-selector">
+            <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+            <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+        </div>
+        
+        <!-- Tablero -->
+        <main class="board-wrapper">
+            <div id="board" class="board-grid">
+                <!-- Las casillas se generan aquí -->
+            </div>
+        </main>
+        
+        <!-- Jugadores -->
+        <div class="players-bar">
+            <div id="playersContainer" class="players-container">
+                <!-- Los jugadores se renderizan aquí -->
+            </div>
+        </div>
+        
+        <!-- Footer con créditos -->
+        <footer class="game-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span class="footer-penguin">🐧</span>
+                    <span class="footer-game">PINGU'S GAME</span>
+                </div>
+                
+                <div class="footer-center">
+                    <span class="footer-creator">by <strong>KirByte</strong></span>
+                    <span class="footer-separator">•</span>
+                    <a href="mailto:kirbytebi07@gmail.com" class="footer-email">kirbytebi07@gmail.com</a>
+                </div>
+                
+                <div class="footer-right">
+                    <span class="footer-copy">© 2026</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Popups -->
+    <div id="chaoticPopup" class="chaotic-popup hidden">
+        <div class="chaotic-content">
+            <h2>🌀 EVENTO CHAOTIC 🌀</h2>
+            <p id="chaoticMessage">¡Ha ocurrido algo inesperado!</p>
+            <button id="chaoticClose" class="btn-chaotic">CONTINUAR</button>
+        </div>
+    </div>
+    
+    <div id="thiefPopup" class="thief-popup hidden">
+        <div class="thief-content">
+            <h2>🦹 LADRÓN FURTIVO 🦹</h2>
+            <p id="thiefMessage">Has robado peces al pasar!</p>
+            <button id="thiefClose" class="btn-thief">OK</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="party.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/players.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/translator.js"></script> <!-- AÑADIDO AL FINAL -->
+</body>
+</html>
